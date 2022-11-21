@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<!-- 1) -->
+<title id="titolo">
+  Title1
+</title>
+<!--
+        ESERCIZI HTML
+
+        1) Assegna un titolo per questa pagina
+        2) Crea un tag h1 con il contenuto che preferisci
+        3) Crea una lista ordinata con alcuni elementi al suo interno
+        4) Crea una tabella con 4 righe e 5 colonne
+        5) Aggiungi un'immagine a ogni seconda cella di ogni riga
+        6) Aggiungi un tag <a> ad ogni immagine
+        7) Unisci insieme 2 celle della tabella
+        8) Dividi la pagina inserendo una riga orizzontale
+        9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata
+        10) Crea un footer contenente alcune informazioni sul creatore della pagina
+
+        ESERCIZI CSS
+
+        11) Assegna una larghezza massima al tag body e centralo nella pagina
+        12) Centra ogni tag h1
+        13) Cambia il colore di ogni link nella pagina
+        14) Crea una classe e assegnale un bordo
+        15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati
+        16) Aggiungi un margine ad ogni paragrafo
+        17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font
+        18) Crea una classe per nascondere un elemento
+        19) Aggiungi un bordo verde a ogni <td>
+        20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border")
+
+        ESERCIZI JAVASCRIPT
+
+        21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe"
+        22) Crea un oggetto con le seguenti proprietà: name, surname, email
+        23) Cancella la proprietà email dall'oggetto appena creato
+        24) Crea un array contenente 10 stringhe
+        25) Mostra in console ogni stringa del precedente array
+        26) Crea un array contenente 100 numeri random
+        27) Scrivi una funzione per trovare il valore massimo e il valore minimo dall'array appena creato
+        28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+        29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+        30) Crea una funzione che riceve 2 array numerici come parametri e ritorna quello con la somma totale degli elementi maggiore
+
+        ESERCIZI SUL DOM
+
+        31) Seleziona l'elemento con id "container" nella pagina
+        32) Seleziona tutti gli elementi di tipo <td> nella pagina
+        33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+        34) Scrivi una funzione per cambiare il titolo della pagina
+        35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+        36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+        37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+        38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+        39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+        40) Scrivi una funzione per svuotare una lista nella pagina
+
+        ESERCIZI EXTRA
+
+        41) Aggiungi un event listener in modo che compaia un alert quando il cursore passa sopra un link; l'alert deve mostrare la sua proprietà href
+        42) Crea un bottone che una volta cliccato nasconde ogni immagine nella pagina
+        43) Crea un bottone che una volta cliccato nasconde o mostra la tabella nella pagina
+        44) Crea una funzione per calcolare la somma di ogni numero contenuto in tutte le celle della tabella (se il contenuto è un numero)
+        45) Cancella l'ultima lettera dal titolo della pagina ogni volta che l'utente ci clicca sopra
+        46) Aggiungi un event listener in modo che cliccando un <td> nella pagina, questo cambi colore di sfondo
+        47) Aggiungi un bottone che una volta cliccato elimini un <td> a caso nella tabella
+        48) Aggiungi automaticamente un bordo rosa ad una cella della tabella quando il cursore ci passa sopra
+        49) Scrivi una funzione per creare una tabella con 4 righe e 3 colonne e aggiungerla alla fine della pagina
+        50) Scrivi una funzione per rimuovere l'ultima tabella presente nella pagina
+        
+    -->
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+
+  <style type="text/css">
+    .mystyle {
+      width: 100%;
+      padding: 25px;
+      background-color: coral;
+      color: white;
+      font-size: 25px;
+      box-sizing: border-box;
+    }
+
+    table {
+      /* border: 1px solid #000; */
+      background-color: green;
+    }
+
+    tr {
+      background-color: #ffff;
+    }
+
+    /* 11) Assegna una larghezza massima al tag body e centralo nella pagina */
+    body {
+      max-width: max-content;
+      margin: auto;
+    }
+
+    /* 12) Centra ogni tag h1  */
+    h1 {
+      text-align: center;
+    }
+
+    /* 13) Cambia il colore di ogni link nella pagina */
+    a {
+      color: aquamarine;
+    }
+
+    /* 15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati */
+
+    table {
+      border-radius: 7px
+    }
+
+    /* 16) Aggiungi un margine ad ogni paragrafo */
+    p {
+      margin: 10px;
+    }
+
+    /* 17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font */
+    .changefont_and_dimension {
+      font-size: 12px;
+      font-family: Verdana, Arial, Helvetica, sans-serif;
+    }
+
+    /* 18) Crea una classe per nascondere un elemento */
+    .hideelement {
+      visibility: hidden;
+    }
+
+    /* 19) Aggiungi un bordo verde a ogni <td> */
+    table td {
+      border-color: green;
+    }
+
+    /* 20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border") */
+    table tr {
+      background-color: red;
+      color: white;
+    }
+  </style>
+
+  <script>
+
+    // 21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe"
+    let x = "John";
+    let y = "Doe";
+    console.log(x + " <> " + y);
+
+    // 22) Crea un oggetto con le seguenti proprietà: name, surname, email
+    let person = {
+      name: "name1",
+      surname: "surname1",
+      email: "email1"
+    }
+
+    // 23) Cancella la proprietà email dall'oggetto appena creato
+    delete person["email"];
+
+    // 24) Crea un array contenente 10 stringhe
+    let arr_strings = ["uno", "due", "tre", "quattro", "cinque", "sei", "sette", "otto", "nove", "dieci"]
+
+    // 25) Mostra in console ogni stringa del precedente array
+    for (let index = 0; index < arr_strings.length; index++) {
+      console.log("indice array " + index + " valore " + arr_strings[index]);
+    }
+
+    // 26) Crea un array contenente 100 numeri random
+    let arr_random = [];
+    for (let index = 0; index < 100; index++) {
+      // generatore numero casuale da 0 a 100 
+      var rand = Math.floor(Math.random() * 100);
+      arr_random.push(rand);
+    }
+
+
+    // 27) Scrivi una funzione per trovare il valore minimo 
+    function valuemin(myarr) {
+      var al = myarr.length;
+      minimum = myarr[al - 1];
+      while (al--) {
+        if (myarr[al] < minimum) {
+          minimum = myarr[al]
+        }
+      }
+      return minimum;
+    };
+    var min = valuemin(arr_random);
+    console.log("valore minimo dell'array random: " + min);
+
+    // 27) Scrivi una funzione per trovare il valore massimo 
+    function valuemax(myarr) {
+      var al = myarr.length;
+      maxvalue = myarr[al - 1];
+      while (al--) {
+        if (myarr[al] > maxvalue) {
+          maxvalue = myarr[al];
+        }
+      }
+      return maxvalue;
+    };
+    var max = valuemax(arr_random);
+    console.log("valore massimo dell'array random: " + max);
+
+
+    // 28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+    var multyarray = []; // Inizializzo array
+    for (var i = 0; i < 3; i++) {
+      multyarray[i] = []; // Inizializzo array padre 
+      for (var j = 0; j < 10; j++) { // inserisco in array figlio
+        multyarray[i][j] = Math.floor(Math.random() * 10);
+      }
+    }
+    console.log("array multidimensionale con 10 numeri random:");
+    console.log(multyarray);
+
+
+    // 29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+    function biggest_arr(arr1, arr2) {
+
+      if (arr1.length > arr2.length) {
+        return arr1;
+      }
+      else {
+        return arr2;
+      }
+    }
+
+    let array1 = [1, 2, 3, 4, 5];
+    let array2 = [1, 2, 3, 4, 5, 3, 7];
+
+    var valoremaggiore = biggest_arr(array1, array2);
+    console.log("l'array maggiore tra array1 e array2 \u00E8:");
+    console.log(valoremaggiore);
+
+
+    // 30) Crea una funzione che riceve 2 array numerici come parametri e 
+    // ritorna quello con la somma totale degli elementi maggiore
+    let array3 = [12, 43, 5, 6, 5, 54, 1];
+    let array4 = [8, 12, 3, 34, 66, 1, 0];
+
+    function sumbiggest(arr1, arr2) {
+      let sum3 = 0;
+      let sum4 = 0;
+
+      for (var index of array3) {
+        sum3 = index + sum3;
+
+      }
+      for (var index of array4) {
+        sum4 = index + sum4;
+      }
+
+      if (sum3 > sum4) {
+        return array3;
+
+      } else {
+        return array4;
+      }
+    }
+    var valoremaggiore_sum = sumbiggest(array3, array4);
+    console.log("l'array con somma maggiore tra array3 e array4 \u00E8:");
+    console.log(valoremaggiore_sum);
+
+    let sum3 = 0;
+    let sum4 = 0;
+    for (var index of array3) {
+      sum3 = index + sum3;
+
+    }
+    for (var index of array4) {
+      sum4 = index + sum4;
+    }
+    console.log(array3 + "con somma: " + sum3);
+    console.log(array4 + "con somma: " + sum4);
+
+
+    //  31) Seleziona l'elemento con id "container" nella pagina
+    var p = document.getElementById("container");
+    var objects = document.getElementsByClassName("changefont_and_dimension");
+    console.log("il container p \u00E8:");
+    console.log(objects);
+
+
+    // 32) Seleziona tutti gli elementi di tipo <td> nella pagina
+    var myTab = document.getElementById("element"); // This have to be the ID of your table, not the tag
+
+
+    // 33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+    function myFunction() {
+      var color = document.getElementById("myTable");
+    }
+
+    // 34) Scrivi una funzione per cambiare il titolo della pagina
+    function changeTitle() {
+      var title = document.getElementById("titolo");
+      title.style.color = 'red';
+      document.title = "New Title";
+
+    }
+    changeTitle();
+
+
+    // 35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+    function addrows() {
+      var myTab = document.getElementById("myTable");
+      var row = myTab.insertRow(0);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      var cell4 = row.insertCell(3);
+      var cell5 = row.insertCell(5);
+
+      cell1.innerHTML = "NEW CELL1";
+      cell2.innerHTML = "NEW CELL2";
+      cell3.innerHTML = "NEW CELL3";
+      cell3.innerHTML = "NEW CELL4";
+      cell4.innerHTML = "NEW CELL5";
+      cell5.innerHTML = "NEW CELL6";
+    }
+    addrows();
+
+    // 36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+    function addclass() {
+      var element = document.getElementById("myDIV");
+      element.classList.add("mystyle");
+      // 37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+
+    }
+
+    // 38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("Page loaded");
+    });
+
+    // 39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+    function addelements() {
+      var element = document.getElementById("listelement");
+      const node = document.createElement("li");
+      const textnode = document.createTextNode("elmento aggiunto");
+      node.appendChild(textnode);
+      document.getElementById("listelement").appendChild(node);
+    }
+
+    // 40) Scrivi una funzione per svuotare una lista nella pagina
+    function empytlist() {
+      var element = document.getElementById("listelement");
+      element.firstElementChild.remove();
+    }
+
+
+
+  </script>
+
+
+</head>
+
+
+
+<body cz-shortcut-listen="true">
+  <!-- 2) Crea un tag h1 con il contenuto che preferisci-->
+  <h1>Contenuto 1 </h1>
+
+  <!-- 3) Crea una lista ordinata con alcuni elementi al suo interno -->
+  <ol>
+    <li>elemento 1</li>
+    <li>elemento 2</li>
+    <li>elemento 3</li>
+    <li>elemento 4</li>
+  </ol>
+  <!-- 4) Crea una tabella con 4 righe e 5 colonne -->
+  <table id="myTable">
+    <tbody>
+      <tr tname="tr">
+        <td name="td" id="myBtn">Colonna 1</td>
+        <td>Colonna 2</td>
+        <td>Colonna 3</td>
+        <td>Colonna 4</td>
+        <td>Colonna 5</td>
+      </tr>
+      <tr>
+        <td>Dato 1,1</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 1,3</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 1,5</td>
+      </tr>
+      <tr>
+        <td>Dato 2,1</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 2,3</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 2,5</td>
+      </tr>
+      <tr>
+        <td>Dato 3,1</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 3,3</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 3,5</td>
+      </tr>
+
+      <tr>
+        <td>Dato 4,1</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 4,3</td>
+        <td><a
+            href="https://epicode.com/it/landing-web-developer-a/?utm_source=googleads&utm_campaign=brand&utm_adgroup=brandexact&utm_term=epicode&utm_campaign=Brand+QI+Target&utm_source=adwords&utm_medium=ppc&hsa_acc=1246633295&hsa_cam=16691982470&hsa_grp=138769335350&hsa_ad=589723747623&hsa_src=g&hsa_tgt=kwd-1083842420863&hsa_kw=epicode&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQiA4OybBhCzARIsAIcfn9mLR66LXsBRwinAdmWxBQ0OIRNRZ72MtJKj7NGITyXklCS43MMGjA0aAio9EALw_wcB"><img
+              src="https://app.3schools.in/logo.png" height="50" width="50"></a></td>
+        <td>Dato 4,5</td>
+      </tr>
+
+      <tr>
+        <!-- 7) Unisci insieme 2 celle della tabella -->
+        <td>Dato 5,1</td>
+        <td>Dato 5,2</td>
+        <td>Dato 5,3</td>
+        <td colspan="2">Dato 5,4</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- da fare -->
+
+  <!-- 6) Aggiungi un tag <a> ad ogni immagine -->
+
+  <!-- 8) Dividi la pagina inserendo una riga orizzontale -->
+
+  <hr>
+  <!-- 9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata -->
+  <div>
+    <p>
+    <ul id="listelement">
+      <li>elemento 1</li>
+      <li>elemento 2</li>
+      <li>elemento 3</li>
+      <li>elemento 4</li>
+    </ul>
+    </p>
+  </div>
+  <p>paragrafo 1: esempio di testo </p>
+
+  <!--17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font-->
+  <h2>
+    tag h2, testo con font e dimnesione default
+  </h2>
+  <h2 class="changefont_and_dimension">
+    Cambio la dimensio e il font di questo testo1
+  </h2>
+
+  <p id="container">
+    tag p, testo con font e dimnesione default
+  </p>
+
+  <p class="changefont_and_dimension">
+    Cambio la dimensione e il font di questo testo2
+  </p>
+
+  <!-- 18) Crea una classe per nascondere un elemento -->
+  <div class="hideelement">
+    <h3>Elemento Nascosto</h3>
+  </div>
+
+  <div id="myDIV">
+    This is a DIV element.
+  </div>
+  <button onclick="addclass()">Premi per add class</button>
+
+  <button onclick="addelements()">Aggiungi</button>
+
+  <button onclick="empytlist()">Svuota Lista</button>
+
+  <button onclick="addrows()">Aggiungi Riga Tabella </button>
+
+
+
+
+
+
+  <!-- 10) Crea un footer contenente alcune informazioni sul creatore della pagina -->
+  <footer>Andrea Persico</footer>
+</body>
+
+</html>
